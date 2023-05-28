@@ -81,3 +81,4 @@ jobs:
         with:
           workflow: build-listing.yml
           repo: Narazaka/vpm-repos
+          token: ${{ secrets.GITHUB_TOKEN }}
