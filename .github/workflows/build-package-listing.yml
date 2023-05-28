@@ -1,0 +1,76 @@
+name: Build Repo Listing
+
+env:
+  listPublishDirectory: template/Website
+  pathToTemplate: template
+  pathToCi: template/ci
+
+on:
+  workflow_call:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build-package-listing:
+    name: build-package-listing
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3 # check out this repo
+      - name: get packageName
+        id: packageName
+        uses: notiz-dev/github-action-json-property@7c8cf5cc36eb85d8d287a8086a39dac59628eb31
+        with:
+          path: "package.json"
+          prop_path: "name"
+
+      - uses: actions/checkout@v3 # check out template repo
+        with:
+          repository: vrchat-community/template-package
+          path: ${{env.pathToTemplate}}
+          clean: false # otherwise the local repo will no longer be checked out
+      - name: Download banner
+        run: curl -o ${{env.pathToTemplate}}/Website/banner.png https://raw.githubusercontent.com/Narazaka/template-package/main/Website/banner.png
+      - uses: actions/checkout@v3 # check out automation repo
+        with:
+          repository: vrchat-community/package-list-action
+          path: ${{env.pathToCi}}
+          clean: false # otherwise the local repo will no longer be checked out
+
+      - run: mkdir -p template/Packages/${{steps.packageName.outputs.prop}} && cp package.json template/Packages/${{steps.packageName.outputs.prop}}
+
+      - name: Restore Cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ${{env.pathToCi}}/.nuke/temp
+            ~/.nuget/packages
+          key: ${{ runner.os }}-${{ hashFiles('**/global.json', '**/*.csproj') }}
+
+      - name: Build Package Version Listing
+        run: ${{env.pathToCi}}/build.cmd BuildRepoListing --root ${{env.pathToCi}} --list-publish-directory $GITHUB_WORKSPACE/${{env.listPublishDirectory}} --current-package-name ${{steps.packageName.outputs.prop}}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ${{env.listPublishDirectory}}
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
