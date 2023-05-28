@@ -76,9 +76,12 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v2
 
-      - name: Invoke repo listing workflow
-        uses: benc-uk/workflow-dispatch@v1
+      - name: Trigger Repo Listing Workflow
+        uses: actions/github-script@v6
         with:
-          workflow: build-listing.yml
-          repo: Narazaka/vpm-repos
-          token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.rest.actions.createWorkflowDispatch({
+              owner: 'Narazaka',
+              repo: 'vpm-repos',
+              workflow_id: 'build-listing.yml',
+            })
