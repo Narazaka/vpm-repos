@@ -13,6 +13,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  actions: write
 
 # Allow one concurrent deployment
 concurrency:
@@ -74,3 +75,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+
+      - name: Invoke repo listing workflow
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: build-listing.yml
+          repo: Narazaka/vpm-repos
