@@ -16,7 +16,8 @@
   "githubRepos": [
     "Narazaka/BoneSelector",
     "Narazaka/BoneSelectTool",
-    "Narazaka/PhysBoneSelector"
+    "Narazaka/PhysBoneSelector",
+    "Narazaka/UnusedBonesByReferencesTool"
   ],
   "packages": []
 }
