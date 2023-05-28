@@ -13,7 +13,6 @@ permissions:
   contents: read
   pages: write
   id-token: write
-  actions: write
 
 # Allow one concurrent deployment
 concurrency:
@@ -75,13 +74,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
-
-      - name: Trigger Repo Listing Workflow
-        uses: actions/github-script@v6
-        with:
-          script: |
-            github.rest.actions.createWorkflowDispatch({
-              owner: 'Narazaka',
-              repo: 'vpm-repos',
-              workflow_id: 'build-listing.yml',
-            })
