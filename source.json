@@ -1,0 +1,22 @@
+{
+  "name": "Narazaka VPM Listing",
+  "id": "net.narazaka.vpm",
+  "url": "https://vpm.narazaka.net/index.json",
+  "author": {
+    "email": "info@narazaka.net",
+    "name": "Narazaka",
+    "url": "https://github.com/Narazaka"
+  },
+  "description": "Narazaka VPM packages",
+  "infoLink": {
+    "url": "http://github.com/Narazaka/vpm-repos",
+    "text": "View on GitHub"
+  },
+  "bannerUrl": "banner.png",
+  "githubRepos": [
+    "Narazaka/BoneSelector",
+    "Narazaka/BoneSelectTool",
+    "Narazaka/PhysBoneSelector"
+  ],
+  "packages": []
+}
