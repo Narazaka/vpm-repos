@@ -30,7 +30,8 @@ jobs:
       - name: Set Environment Variables
         run: |
           echo "zipFile=${{ steps.packageName.outputs.prop }}-${{ steps.version.outputs.prop }}".zip >> $GITHUB_ENV
-          echo "unityPackage=${{ steps.packageName.outputs.prop }}-${{ steps.version.outputs.prop }}.unitypackage" >> $GITHUB_ENV
+          echo "unityPackage=${{ steps.packageName.outputs.prop }}-${{ steps.version.outputs.prop }}-novcc.unitypackage" >> $GITHUB_ENV
+          echo "unityPackageZipFile=${{ steps.packageName.outputs.prop }}-${{ steps.version.outputs.prop }}-novcc.zip" >> $GITHUB_ENV
 
       - name: Create Zip
         uses: thedoctor0/zip-release@09336613be18a8208dfa66bd57efafd9e2685657
@@ -57,11 +58,19 @@ jobs:
           package-path: ${{ env.unityPackage }}
           include-files: metaList
 
+      - name: Create UnityPackage Zip
+        uses: thedoctor0/zip-release@09336613be18a8208dfa66bd57efafd9e2685657
+        with:
+          type: "zip"
+          directory: "."
+          path: ${{ env.unityPackage }}
+          filename: "${{env.unityPackageZipFile}}"
+
       - name: Make Release
         uses: softprops/action-gh-release@1e07f4398721186383de40550babbdf2b84acfc5
         with:
           tag_name: ${{ steps.version.outputs.prop }}
           files: |
             ${{ env.zipFile }}
-            ${{ env.unityPackage }}
+            ${{ env.unityPackageZipFile }}
             package.json
