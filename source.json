@@ -18,7 +18,8 @@
     "Narazaka/BoneSelectTool",
     "Narazaka/PhysBoneSelector",
     "Narazaka/UnusedBonesByReferencesTool",
-    "Narazaka/AvatarMenuCreaterForMA"
+    "Narazaka/AvatarMenuCreaterForMA",
+    "Narazaka/ManualBaker"
   ],
   "packages": []
 }
