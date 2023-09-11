@@ -20,7 +20,8 @@
     "Narazaka/UnusedBonesByReferencesTool",
     "Narazaka/AvatarMenuCreaterForMA",
     "Narazaka/AvatarParametersSaver",
-    "Narazaka/ManualBaker"
+    "Narazaka/ManualBaker",
+    "Narazaka/CheckMissingScripts"
   ],
   "packages": []
 }
