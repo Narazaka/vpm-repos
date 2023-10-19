@@ -21,7 +21,8 @@
     "Narazaka/AvatarMenuCreaterForMA",
     "Narazaka/AvatarParametersSaver",
     "Narazaka/ManualBaker",
-    "Narazaka/CheckMissingScripts"
+    "Narazaka/CheckMissingScripts",
+    "Narazaka/MagicalDresserInventorySystemModularAvatarExtension"
   ],
   "packages": []
 }
