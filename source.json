@@ -22,7 +22,8 @@
     "Narazaka/AvatarParametersSaver",
     "Narazaka/ManualBaker",
     "Narazaka/CheckMissingScripts",
-    "Narazaka/MagicalDresserInventorySystemModularAvatarExtension"
+    "Narazaka/MagicalDresserInventorySystemModularAvatarExtension",
+    "Narazaka/BreastPBAdjuster"
   ],
   "packages": []
 }
