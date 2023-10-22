@@ -1,0 +1,21 @@
+name: Call Build Repo Listing
+
+on:
+  workflow_call:
+    secrets:
+      DISPATCH_TOKEN:
+        required: true
+
+jobs:
+  call-build-listing:
+    name: call-build-listing
+    runs-on: ubuntu-latest
+    steps:
+      - uses: convictional/trigger-workflow-and-wait@v1.6.1
+        with:
+          owner: Narazaka
+          repo: vpm-repos
+          github_token: ${{ secrets.DISPATCH_TOKEN }}
+          workflow_file_name: build-listing.yml
+          propagate_failure: false
+          wait_workflow: false
