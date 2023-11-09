@@ -24,7 +24,8 @@
     "Narazaka/CheckMissingScripts",
     "Narazaka/MagicalDresserInventorySystemModularAvatarExtension",
     "Narazaka/BreastPBAdjuster",
-    "Narazaka/TeleportSetter"
+    "Narazaka/TeleportSetter",
+    "Narazaka/FloorAdjuster"
   ],
   "packages": []
 }
