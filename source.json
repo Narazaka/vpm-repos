@@ -26,7 +26,8 @@
     "Narazaka/BreastPBAdjuster",
     "Narazaka/TeleportSetter",
     "Narazaka/FloorAdjuster",
-    "Narazaka/SyncTexture"
+    "Narazaka/SyncTexture",
+    "Narazaka/RenderTexture2D"
   ],
   "packages": []
 }
