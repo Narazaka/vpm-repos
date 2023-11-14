@@ -25,7 +25,8 @@
     "Narazaka/MagicalDresserInventorySystemModularAvatarExtension",
     "Narazaka/BreastPBAdjuster",
     "Narazaka/TeleportSetter",
-    "Narazaka/FloorAdjuster"
+    "Narazaka/FloorAdjuster",
+    "Narazaka/SyncTexture"
   ],
   "packages": []
 }
