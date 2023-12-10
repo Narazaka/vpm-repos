@@ -27,7 +27,8 @@
     "Narazaka/TeleportSetter",
     "Narazaka/FloorAdjuster",
     "Narazaka/SyncTexture",
-    "Narazaka/RenderTexture2D"
+    "Narazaka/RenderTexture2D",
+    "Narazaka/ShaderValueIO"
   ],
   "packages": []
 }
