@@ -28,7 +28,8 @@
     "Narazaka/FloorAdjuster",
     "Narazaka/SyncTexture",
     "Narazaka/RenderTexture2D",
-    "Narazaka/ShaderValueIO"
+    "Narazaka/ShaderValueIO",
+    "Narazaka/YutoroomEssentials"
   ],
   "packages": []
 }
