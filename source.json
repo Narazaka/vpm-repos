@@ -29,7 +29,8 @@
     "Narazaka/SyncTexture",
     "Narazaka/RenderTexture2D",
     "Narazaka/ShaderValueIO",
-    "Narazaka/YutoroomEssentials"
+    "Narazaka/YutoroomEssentials",
+    "Narazaka/AvatarParametersDriver"
   ],
   "packages": []
 }
