@@ -30,7 +30,8 @@
     "Narazaka/RenderTexture2D",
     "Narazaka/ShaderValueIO",
     "Narazaka/YutoroomEssentials",
-    "Narazaka/AvatarParametersDriver"
+    "Narazaka/AvatarParametersDriver",
+    "Narazaka/AvatarParametersExclusiveGroup"
   ],
   "packages": []
 }
