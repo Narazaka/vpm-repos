@@ -31,7 +31,8 @@
     "Narazaka/ShaderValueIO",
     "Narazaka/YutoroomEssentials",
     "Narazaka/AvatarParametersDriver",
-    "Narazaka/AvatarParametersExclusiveGroup"
+    "Narazaka/AvatarParametersExclusiveGroup",
+    "Narazaka/AvatarParametersUtil"
   ],
   "packages": []
 }
