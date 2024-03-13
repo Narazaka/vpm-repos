@@ -32,7 +32,8 @@
     "Narazaka/YutoroomEssentials",
     "Narazaka/AvatarParametersDriver",
     "Narazaka/AvatarParametersExclusiveGroup",
-    "Narazaka/AvatarParametersUtil"
+    "Narazaka/AvatarParametersUtil",
+    "Narazaka/SimpleHash"
   ],
   "packages": []
 }
