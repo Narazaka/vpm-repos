@@ -33,7 +33,8 @@
     "Narazaka/AvatarParametersDriver",
     "Narazaka/AvatarParametersExclusiveGroup",
     "Narazaka/AvatarParametersUtil",
-    "Narazaka/SimpleHash"
+    "Narazaka/SimpleHash",
+    "Narazaka/DeleteEditorOnly"
   ],
   "packages": []
 }
