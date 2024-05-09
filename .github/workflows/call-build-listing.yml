@@ -12,6 +12,9 @@ on:
       repo:
         type: string
         default: vpm-repos
+      ref:
+        type: string
+        default: main
 
 jobs:
   call-build-listing:
@@ -22,6 +25,7 @@ jobs:
         with:
           owner: ${{ inputs.owner }}
           repo: ${{ inputs.repo }}
+          ref: ${{ inputs.ref }}
           github_token: ${{ secrets.DISPATCH_TOKEN }}
           workflow_file_name: build-listing.yml
           propagate_failure: false
