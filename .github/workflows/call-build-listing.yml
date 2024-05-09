@@ -5,6 +5,13 @@ on:
     secrets:
       DISPATCH_TOKEN:
         required: true
+    inputs:
+      owner:
+        type: string
+        default: Narazaka
+      repo:
+        type: string
+        default: vpm-repos
 
 jobs:
   call-build-listing:
@@ -13,8 +20,8 @@ jobs:
     steps:
       - uses: convictional/trigger-workflow-and-wait@v1.6.1
         with:
-          owner: Narazaka
-          repo: vpm-repos
+          owner: ${{ inputs.owner }}
+          repo: ${{ inputs.repo }}
           github_token: ${{ secrets.DISPATCH_TOKEN }}
           workflow_file_name: build-listing.yml
           propagate_failure: false
