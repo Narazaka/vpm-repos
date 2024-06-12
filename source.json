@@ -34,7 +34,8 @@
     "Narazaka/AvatarParametersExclusiveGroup",
     "Narazaka/AvatarParametersUtil",
     "Narazaka/SimpleHash",
-    "Narazaka/DeleteEditorOnly"
+    "Narazaka/DeleteEditorOnly",
+    "Narazaka/VRCRenderQueueDebug"
   ],
   "packages": []
 }
