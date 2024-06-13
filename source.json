@@ -36,7 +36,8 @@
     "Narazaka/SimpleHash",
     "Narazaka/DeleteEditorOnly",
     "Narazaka/VRCRenderQueueDebug",
-    "Narazaka/SyncTextureShaderDXT"
+    "Narazaka/SyncTextureShaderDXT",
+    "Narazaka/ShaderDXT"
   ],
   "packages": []
 }
