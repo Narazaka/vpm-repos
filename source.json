@@ -35,7 +35,8 @@
     "Narazaka/AvatarParametersUtil",
     "Narazaka/SimpleHash",
     "Narazaka/DeleteEditorOnly",
-    "Narazaka/VRCRenderQueueDebug"
+    "Narazaka/VRCRenderQueueDebug",
+    "Narazaka/SyncTextureShaderDXT"
   ],
   "packages": []
 }
