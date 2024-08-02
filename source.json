@@ -37,7 +37,8 @@
     "Narazaka/DeleteEditorOnly",
     "Narazaka/VRCRenderQueueDebug",
     "Narazaka/SyncTextureShaderDXT",
-    "Narazaka/ShaderDXT"
+    "Narazaka/ShaderDXT",
+    "Narazaka/MaterialVariantCreator"
   ],
   "packages": []
 }
