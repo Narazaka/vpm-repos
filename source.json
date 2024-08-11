@@ -38,7 +38,8 @@
     "Narazaka/VRCRenderQueueDebug",
     "Narazaka/SyncTextureShaderDXT",
     "Narazaka/ShaderDXT",
-    "Narazaka/MaterialVariantCreator"
+    "Narazaka/MaterialVariantCreator",
+    "Narazaka/OnlyVRCFallbackShader"
   ],
   "packages": []
 }
