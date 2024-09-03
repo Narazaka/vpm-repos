@@ -40,7 +40,8 @@
     "Narazaka/ShaderDXT",
     "Narazaka/MaterialVariantCreator",
     "Narazaka/OnlyVRCFallbackShader",
-    "Narazaka/tiled-number-shader"
+    "Narazaka/tiled-number-shader",
+    "Narazaka/SimpleClock"
   ],
   "packages": []
 }
