@@ -39,7 +39,8 @@
     "Narazaka/SyncTextureShaderDXT",
     "Narazaka/ShaderDXT",
     "Narazaka/MaterialVariantCreator",
-    "Narazaka/OnlyVRCFallbackShader"
+    "Narazaka/OnlyVRCFallbackShader",
+    "Narazaka/tiled-number-shader"
   ],
   "packages": []
 }
