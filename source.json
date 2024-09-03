@@ -42,7 +42,8 @@
     "Narazaka/OnlyVRCFallbackShader",
     "Narazaka/tiled-number-shader",
     "Narazaka/SimpleClock",
-    "Narazaka/SimplePlayerCount"
+    "Narazaka/SimplePlayerCount",
+    "Narazaka/SimplePlatformPlayerCount"
   ],
   "packages": []
 }
