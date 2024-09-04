@@ -43,7 +43,8 @@
     "Narazaka/tiled-number-shader",
     "Narazaka/SimpleClock",
     "Narazaka/SimplePlayerCount",
-    "Narazaka/SimplePlatformPlayerCount"
+    "Narazaka/SimplePlatformPlayerCount",
+    "Narazaka/AvatarStatusWindowMaker"
   ],
   "packages": []
 }
