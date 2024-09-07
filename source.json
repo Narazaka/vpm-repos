@@ -44,7 +44,8 @@
     "Narazaka/SimpleClock",
     "Narazaka/SimplePlayerCount",
     "Narazaka/SimplePlatformPlayerCount",
-    "Narazaka/AvatarStatusWindowMaker"
+    "Narazaka/AvatarStatusWindowMaker",
+    "Narazaka/AnimatorLayerFilter"
   ],
   "packages": []
 }
