@@ -45,7 +45,8 @@
     "Narazaka/SimplePlayerCount",
     "Narazaka/SimplePlatformPlayerCount",
     "Narazaka/AvatarStatusWindowMaker",
-    "Narazaka/AnimatorLayerFilter"
+    "Narazaka/AnimatorLayerFilter",
+    "Narazaka/tmp-fallback-fonts-jp"
   ],
   "packages": []
 }
