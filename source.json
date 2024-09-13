@@ -47,7 +47,8 @@
     "Narazaka/AvatarStatusWindowMaker",
     "Narazaka/AnimatorLayerFilter",
     "Narazaka/tmp-fallback-fonts-jp",
-    "Narazaka/ParameterIconGenerator"
+    "Narazaka/ParameterIconGenerator",
+    "Narazaka/Mirror4Avatar"
   ],
   "packages": []
 }
