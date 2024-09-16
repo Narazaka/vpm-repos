@@ -33,13 +33,16 @@ jobs:
           echo "unityPackage=${{ steps.packageName.outputs.prop }}-${{ steps.version.outputs.prop }}-novcc.unitypackage" >> $GITHUB_ENV
           echo "unityPackageZipFile=${{ steps.packageName.outputs.prop }}-${{ steps.version.outputs.prop }}-novcc.zip" >> $GITHUB_ENV
 
+      - name: remove doc~
+        run: rm -rf doc~
+
       - name: Create Zip
         uses: thedoctor0/zip-release@09336613be18a8208dfa66bd57efafd9e2685657
         with:
           type: "zip"
           directory: "."
           filename: "${{env.zipFile}}" # make the zip file two directories up, since we start two directories in above
-          exclusions: "*.git* *~/*"
+          exclusions: "*.git*"
 
       - name: mkdir Packages
         run: mkdir Packages
