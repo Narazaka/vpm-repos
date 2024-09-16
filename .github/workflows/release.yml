@@ -39,7 +39,7 @@ jobs:
           type: "zip"
           directory: "."
           filename: "${{env.zipFile}}" # make the zip file two directories up, since we start two directories in above
-          exclusions: "*.git* *~"
+          exclusions: "*.git* /doc~"
 
       - name: mkdir Packages
         run: mkdir Packages
