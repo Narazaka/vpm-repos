@@ -6,6 +6,9 @@ on:
       repos:
         type: string
         description: "https://vpm.nadena.dev/vpm.json\nhttps://example.com/index.json"
+      ma:
+        type: boolean
+        description: "add https://vpm.nadena.dev/vpm.json to repos"
 
 permissions:
   contents: write
@@ -40,6 +43,9 @@ jobs:
           echo "vpaiLatestZipFile=${{ steps.packageName.outputs.prop }}-instaler.zip" >> $GITHUB_ENV
           echo "vpaiVersionFile=${{ steps.packageName.outputs.prop }}-${{ steps.version.outputs.prop }}-instaler.unitypackage" >> $GITHUB_ENV
           echo "vpaiVersionZipFile=${{ steps.packageName.outputs.prop }}-${{ steps.version.outputs.prop }}-instaler.zip" >> $GITHUB_ENV
+          if [ ${{ inputs.ma }} = true ]; then
+            echo "marepos=https://vpm.nadena.dev/vpm.json" >> $GITHUB_ENV
+          fi
 
       - name: remove doc~
         run: rm -rf doc~
@@ -83,6 +89,7 @@ jobs:
           repositories: |
             https://vpm.narazaka.net/index.json
             ${{ inputs.repos }}
+            ${{ env.marepos }}
           packages: ${{ steps.packageName.outputs.prop }}@^${{ steps.version.outputs.prop }}
           output: "${{ env.vpaiLatestFile }}"
       - name: Create VPAI latest Zip
