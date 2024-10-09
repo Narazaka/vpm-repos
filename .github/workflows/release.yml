@@ -5,7 +5,11 @@ on:
     inputs:
       repos:
         type: string
-        description: "https://vpm.nadena.dev/vpm.json\nhttps://example.com/index.json"
+        description: "repos for vpai / ex: https://vpm.anatawa12.com/vpm.json\nhttps://example.com/index.json"
+      narazaka:
+        type: boolean
+        description: "add https://vpm.narazaka.net/index.json to repos"
+        default: true
       ma:
         type: boolean
         description: "add https://vpm.nadena.dev/vpm.json to repos"
@@ -54,6 +58,9 @@ jobs:
             echo "vpaiLatestZipFile=${{ steps.packageName.outputs.prop }}-instaler.zip" >> $GITHUB_ENV
             echo "vpaiVersionFile=${{ steps.packageName.outputs.prop }}-${{ steps.version.outputs.prop }}-instaler.unitypackage" >> $GITHUB_ENV
             echo "vpaiVersionZipFile=${{ steps.packageName.outputs.prop }}-${{ steps.version.outputs.prop }}-instaler.zip" >> $GITHUB_ENV
+          fi
+          if [ ${{ inputs.narazaka }} = true ]; then
+            echo "narazakarepos=https://vpm.narazaka.net/index.json" >> $GITHUB_ENV
           fi
           if [ ${{ inputs.ma }} = true ]; then
             echo "marepos=https://vpm.nadena.dev/vpm.json" >> $GITHUB_ENV
@@ -106,9 +113,9 @@ jobs:
         uses: anatawa12/sh-actions/create-vpai@ab722329dbdc558dd9cc8e7bc89bb61d2df21ba0
         with:
           repositories: |
-            https://vpm.narazaka.net/index.json
             ${{ inputs.repos }}
             ${{ env.marepos }}
+            ${{ env.narazakarepos }}
           packages: ${{ steps.packageName.outputs.prop }}@^${{ steps.version.outputs.prop }}
           output: "${{ env.vpaiLatestFile }}"
       - name: Create VPAI latest Zip
@@ -124,9 +131,9 @@ jobs:
         uses: anatawa12/sh-actions/create-vpai@ab722329dbdc558dd9cc8e7bc89bb61d2df21ba0
         with:
           repositories: |
-            https://vpm.narazaka.net/index.json
             ${{ inputs.repos }}
             ${{ env.marepos }}
+            ${{ env.narazakarepos }}
           packages: ${{ steps.packageName.outputs.prop }}@${{ steps.version.outputs.prop }}
           output: "${{ env.vpaiVersionFile }}"
       - name: Create VPAI version Zip
