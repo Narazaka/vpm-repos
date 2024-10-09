@@ -105,6 +105,7 @@ jobs:
           repositories: |
             https://vpm.narazaka.net/index.json
             ${{ inputs.repos }}
+            ${{ env.marepos }}
           packages: ${{ steps.packageName.outputs.prop }}@${{ steps.version.outputs.prop }}
           output: "${{ env.vpaiVersionFile }}"
       - name: Create VPAI version Zip
