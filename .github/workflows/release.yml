@@ -9,6 +9,14 @@ on:
       ma:
         type: boolean
         description: "add https://vpm.nadena.dev/vpm.json to repos"
+      novcc:
+        type: boolean
+        description: "build novcc zip"
+        default: true
+      vpai:
+        type: boolean
+        description: "build vpai zip"
+        default: true
 
 permissions:
   contents: write
@@ -37,12 +45,16 @@ jobs:
       - name: Set Environment Variables
         run: |
           echo "zipFile=${{ steps.packageName.outputs.prop }}-${{ steps.version.outputs.prop }}".zip >> $GITHUB_ENV
-          echo "unityPackage=${{ steps.packageName.outputs.prop }}-${{ steps.version.outputs.prop }}-novcc.unitypackage" >> $GITHUB_ENV
-          echo "unityPackageZipFile=${{ steps.packageName.outputs.prop }}-${{ steps.version.outputs.prop }}-novcc.zip" >> $GITHUB_ENV
-          echo "vpaiLatestFile=${{ steps.packageName.outputs.prop }}-instaler.unitypackage" >> $GITHUB_ENV
-          echo "vpaiLatestZipFile=${{ steps.packageName.outputs.prop }}-instaler.zip" >> $GITHUB_ENV
-          echo "vpaiVersionFile=${{ steps.packageName.outputs.prop }}-${{ steps.version.outputs.prop }}-instaler.unitypackage" >> $GITHUB_ENV
-          echo "vpaiVersionZipFile=${{ steps.packageName.outputs.prop }}-${{ steps.version.outputs.prop }}-instaler.zip" >> $GITHUB_ENV
+          if [ ${{ inputs.novcc }} = true ]; then
+            echo "unityPackage=${{ steps.packageName.outputs.prop }}-${{ steps.version.outputs.prop }}-novcc.unitypackage" >> $GITHUB_ENV
+            echo "unityPackageZipFile=${{ steps.packageName.outputs.prop }}-${{ steps.version.outputs.prop }}-novcc.zip" >> $GITHUB_ENV
+          fi
+          if [ ${{ inputs.vpai }} = true ]; then
+            echo "vpaiLatestFile=${{ steps.packageName.outputs.prop }}-instaler.unitypackage" >> $GITHUB_ENV
+            echo "vpaiLatestZipFile=${{ steps.packageName.outputs.prop }}-instaler.zip" >> $GITHUB_ENV
+            echo "vpaiVersionFile=${{ steps.packageName.outputs.prop }}-${{ steps.version.outputs.prop }}-instaler.unitypackage" >> $GITHUB_ENV
+            echo "vpaiVersionZipFile=${{ steps.packageName.outputs.prop }}-${{ steps.version.outputs.prop }}-instaler.zip" >> $GITHUB_ENV
+          fi
           if [ ${{ inputs.ma }} = true ]; then
             echo "marepos=https://vpm.nadena.dev/vpm.json" >> $GITHUB_ENV
           fi
@@ -59,23 +71,29 @@ jobs:
           exclusions: "*.git*"
 
       - name: mkdir Packages
+        if: ${{ inputs.novcc == true }}
         run: mkdir Packages
 
       - name: Checkout for unitypackage
+        if: ${{ inputs.novcc == true }}
         uses: actions/checkout@v3 # check out automation repo
         with:
           path: Packages/${{steps.packageName.outputs.prop}}
           clean: false # otherwise the local repo will no longer be checked out
 
-      - run: find "Packages/${{steps.packageName.outputs.prop}}" -name \*.meta >> metaList
+      - name: Create .meta list
+        if: ${{ inputs.novcc == true }}
+        run: find "Packages/${{steps.packageName.outputs.prop}}" -name \*.meta >> metaList
 
       - name: Create UnityPackage
+        if: ${{ inputs.novcc == true }}
         uses: pCYSl5EDgo/create-unitypackage@cfcd3cf0391a5ef1306342794866a9897c32af0b
         with:
           package-path: ${{ env.unityPackage }}
           include-files: metaList
 
       - name: Create UnityPackage Zip
+        if: ${{ inputs.novcc == true }}
         uses: thedoctor0/zip-release@09336613be18a8208dfa66bd57efafd9e2685657
         with:
           type: "zip"
@@ -84,6 +102,7 @@ jobs:
           filename: "${{env.unityPackageZipFile}}"
 
       - name: Create VPAI latest
+        if: ${{ inputs.vpai == true }}
         uses: anatawa12/sh-actions/create-vpai@ab722329dbdc558dd9cc8e7bc89bb61d2df21ba0
         with:
           repositories: |
@@ -93,6 +112,7 @@ jobs:
           packages: ${{ steps.packageName.outputs.prop }}@^${{ steps.version.outputs.prop }}
           output: "${{ env.vpaiLatestFile }}"
       - name: Create VPAI latest Zip
+        if: ${{ inputs.vpai == true }}
         uses: thedoctor0/zip-release@09336613be18a8208dfa66bd57efafd9e2685657
         with:
           type: "zip"
@@ -100,6 +120,7 @@ jobs:
           path: ${{ env.vpaiLatestFile }}
           filename: ${{ env.vpaiLatestZipFile }}
       - name: Create VPAI version
+        if: ${{ inputs.vpai == true }}
         uses: anatawa12/sh-actions/create-vpai@ab722329dbdc558dd9cc8e7bc89bb61d2df21ba0
         with:
           repositories: |
@@ -109,6 +130,7 @@ jobs:
           packages: ${{ steps.packageName.outputs.prop }}@${{ steps.version.outputs.prop }}
           output: "${{ env.vpaiVersionFile }}"
       - name: Create VPAI version Zip
+        if: ${{ inputs.vpai == true }}
         uses: thedoctor0/zip-release@09336613be18a8208dfa66bd57efafd9e2685657
         with:
           type: "zip"
