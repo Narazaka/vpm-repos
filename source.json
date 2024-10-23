@@ -48,7 +48,8 @@
     "Narazaka/AnimatorLayerFilter",
     "Narazaka/tmp-fallback-fonts-jp",
     "Narazaka/ParameterIconGenerator",
-    "Narazaka/Mirror4Avatar"
+    "Narazaka/Mirror4Avatar",
+    "Narazaka/NOPShader"
   ],
   "packages": []
 }
