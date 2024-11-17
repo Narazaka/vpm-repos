@@ -50,7 +50,8 @@
     "Narazaka/ParameterIconGenerator",
     "Narazaka/Mirror4Avatar",
     "Narazaka/NOPShader",
-    "Narazaka/AddMaterialSlots"
+    "Narazaka/AddMaterialSlots",
+    "Narazaka/AvatarOnlyMe"
   ],
   "packages": []
 }
