@@ -51,7 +51,8 @@
     "Narazaka/Mirror4Avatar",
     "Narazaka/NOPShader",
     "Narazaka/AddMaterialSlots",
-    "Narazaka/AvatarOnlyMe"
+    "Narazaka/AvatarOnlyMe",
+    "Narazaka/SmartCollider"
   ],
   "packages": []
 }
