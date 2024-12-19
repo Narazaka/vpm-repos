@@ -53,7 +53,8 @@
     "Narazaka/AddMaterialSlots",
     "Narazaka/AvatarOnlyMe",
     "Narazaka/SmartCollider",
-    "Narazaka/UIRelay"
+    "Narazaka/UIRelay",
+    "Narazaka/URLBookmarks"
   ],
   "packages": []
 }
