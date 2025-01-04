@@ -54,10 +54,10 @@ jobs:
             echo "unityPackageZipFile=${{ steps.packageName.outputs.prop }}-${{ steps.version.outputs.prop }}-novcc.zip" >> $GITHUB_ENV
           fi
           if [ ${{ inputs.vpai }} = true ]; then
-            echo "vpaiLatestFile=${{ steps.packageName.outputs.prop }}-instaler.unitypackage" >> $GITHUB_ENV
-            echo "vpaiLatestZipFile=${{ steps.packageName.outputs.prop }}-instaler.zip" >> $GITHUB_ENV
-            echo "vpaiVersionFile=${{ steps.packageName.outputs.prop }}-${{ steps.version.outputs.prop }}-instaler.unitypackage" >> $GITHUB_ENV
-            echo "vpaiVersionZipFile=${{ steps.packageName.outputs.prop }}-${{ steps.version.outputs.prop }}-instaler.zip" >> $GITHUB_ENV
+            echo "vpaiLatestFile=${{ steps.packageName.outputs.prop }}-installer.unitypackage" >> $GITHUB_ENV
+            echo "vpaiLatestZipFile=${{ steps.packageName.outputs.prop }}-installer.zip" >> $GITHUB_ENV
+            echo "vpaiVersionFile=${{ steps.packageName.outputs.prop }}-${{ steps.version.outputs.prop }}-installer.unitypackage" >> $GITHUB_ENV
+            echo "vpaiVersionZipFile=${{ steps.packageName.outputs.prop }}-${{ steps.version.outputs.prop }}-installer.zip" >> $GITHUB_ENV
           fi
           if [ ${{ inputs.narazaka }} = true ]; then
             echo "narazakarepos=https://vpm.narazaka.net/index.json" >> $GITHUB_ENV
