@@ -55,7 +55,8 @@
     "Narazaka/SmartCollider",
     "Narazaka/UIRelay",
     "Narazaka/URLBookmarks",
-    "Narazaka/BedGimmicks"
+    "Narazaka/BedGimmicks",
+    "Narazaka/MakeUPMPackage"
   ],
   "packages": []
 }
