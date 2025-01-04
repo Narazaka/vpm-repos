@@ -56,7 +56,8 @@
     "Narazaka/UIRelay",
     "Narazaka/URLBookmarks",
     "Narazaka/BedGimmicks",
-    "Narazaka/MakeUPMPackage"
+    "Narazaka/MakeUPMPackage",
+    "Narazaka/CopyAssetsWithDependency"
   ],
   "packages": []
 }
