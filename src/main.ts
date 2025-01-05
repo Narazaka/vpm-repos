@@ -31,6 +31,8 @@ async function main() {
       // biome-ignore lint/style/noNonNullAssertion: <explanation>
       const type = $package.dataset.type! as "Any" | "Avatar" | "World";
       // biome-ignore lint/style/noNonNullAssertion: <explanation>
+      const id = $package.dataset.id!;
+      // biome-ignore lint/style/noNonNullAssertion: <explanation>
       const displayName = $package.dataset.displayName!.toLowerCase();
       // biome-ignore lint/style/noNonNullAssertion: <explanation>
       const description = $package.dataset.description!.toLowerCase();
@@ -38,7 +40,8 @@ async function main() {
       if (
         query &&
         !description.includes(query) &&
-        !displayName.includes(query)
+        !displayName.includes(query) &&
+        !id.includes(query)
       ) {
         $package.classList.add("hide");
       } else if (types.size && !types.has(type)) {
