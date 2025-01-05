@@ -30,6 +30,6 @@
     "semver": "^7.6.3",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2",
-    "vpm-listing-generator": "^1.0.0"
+    "vpm-listing-generator": "^1.1.0"
   }
 }

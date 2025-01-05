@@ -75,9 +75,9 @@
           </ul>
         </div>
         <div class="actions">
-          <!--
-          <button class="button primary">Download Installer</button>
-          -->
+          {{#if latest.installerUrl}}
+          <a class="button primary" href="{{latest.installerUrl}}">Download Installer</a>
+          {{/if}}
           {{#if latest.documentationUrl}}
           <a class="button" href="{{latest.documentationUrl}}">Documentation</a>
           {{/if}}

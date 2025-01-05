@@ -4,7 +4,7 @@ import Handlebars from "handlebars";
 import semver from "semver";
 import { type Listing, assertListing } from "vpm-listing-generator/Listing";
 import type { Package } from "vpm-listing-generator/Package";
-import { assertSource } from "vpm-listing-generator/Source";
+import { assertSource, type Source } from "vpm-listing-generator/Source";
 import {
   listingJsonPath,
   rootDir,
@@ -22,12 +22,11 @@ export function build() {
 
   const source = assertSource(
     JSON.parse(fs.readFileSync(`${rootDir}/source.json`, "utf8")),
-  );
+  ) as Source & { bannerUrl?: string };
   const bannerAspectRatio = {
     bannerAspectRatio: "1 / 1",
   };
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  const bannerUrl = (source as any).bannerUrl as string | undefined;
+  const bannerUrl = source.bannerUrl;
   if (bannerUrl) {
     const size = imageSize(fs.readFileSync(`${siteSourceDir}/${bannerUrl}`));
     bannerAspectRatio.bannerAspectRatio = `${size.width} / ${size.height}`;
