@@ -1,17 +1,17 @@
 import fs from "node:fs";
 import esbuild from "esbuild";
 import Handlebars from "handlebars";
+import { imageSize } from "image-size";
 import semver from "semver";
 import { type Listing, assertListing } from "vpm-listing-generator/Listing";
 import type { Package } from "vpm-listing-generator/Package";
-import { assertSource, type Source } from "vpm-listing-generator/Source";
+import { type Source, assertSource } from "vpm-listing-generator/Source";
 import {
   listingJsonPath,
   rootDir,
   siteDestinationDir,
   siteSourceDir,
 } from "./consts.js";
-import {imageSize} from "image-size"
 
 export function build() {
   fs.mkdirSync(siteDestinationDir, { recursive: true });

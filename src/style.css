@@ -234,11 +234,16 @@ body {
   }
 }
 
-.package > .information > .header > .displayName {
+.package > .information > .header .displayName {
   font-size: 1.1rem;
   font-weight: 600;
   margin: 0;
   padding: 0;
+  text-decoration: none;
+  color: #333;
+}
+.package > .information > .header a:has(.displayName) {
+  text-decoration: none;
 }
 
 .package > .information > .header > .version {

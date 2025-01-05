@@ -47,7 +47,9 @@
         data-description="{{latest.description}}">
         <div class="information">
           <header class="header">
-            <h2 class="displayName">{{latest.displayName}}</h2>
+            <a href="{{latest.githubUrl}}">
+              <h2 class="displayName">{{latest.displayName}}</h2>
+            </a>
             <p class="version">{{latest.version}}</p>
             <p class="type {{type}}">{{type}}</p>
             {{#if latest.unity}}
