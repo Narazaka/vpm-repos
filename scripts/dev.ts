@@ -27,22 +27,22 @@ http
       return;
     }
     if (req.url !== "/poll") {
-      const url = new URL(
-        req.url.endsWith("/") ? `${req.url}index.html` : req.url,
-        `http://localhost:${port}`,
-      );
-      const filePath = `${siteDestinationDir}${url.pathname}`;
+      const url = new URL(req.url, `http://localhost:${port}`);
+      const pathname = url.pathname.endsWith("/")
+        ? `${url.pathname}index.html`
+        : url.pathname;
+      const filePath = `${siteDestinationDir}${pathname}`;
       if (!fs.existsSync(filePath) || fs.statSync(filePath).isDirectory()) {
         res.statusCode = 404;
         res.end();
         return;
       }
-      const extMatch = url.pathname.match(/\.\w+$/);
+      const extMatch = pathname.match(/\.\w+$/);
       const contentType =
         contentTypes[extMatch ? extMatch[0] : ""] || "application/octet-stream";
 
       res.writeHead(200, { "Content-Type": contentType });
-      if (url.pathname === "/index.html") {
+      if (pathname === "/index.html") {
         res.end(
           `${fs.readFileSync(filePath, "utf-8")}<script src="poll.js"></script>`,
           "utf-8",
