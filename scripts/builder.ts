@@ -11,6 +11,7 @@ import {
   siteDestinationDir,
   siteSourceDir,
 } from "./consts.js";
+import {imageSize} from "image-size"
 
 export function build() {
   fs.mkdirSync(siteDestinationDir, { recursive: true });
@@ -22,6 +23,15 @@ export function build() {
   const source = assertSource(
     JSON.parse(fs.readFileSync(`${rootDir}/source.json`, "utf8")),
   );
+  const bannerAspectRatio = {
+    bannerAspectRatio: "1 / 1",
+  };
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+  const bannerUrl = (source as any).bannerUrl as string | undefined;
+  if (bannerUrl) {
+    const size = imageSize(fs.readFileSync(`${siteSourceDir}/${bannerUrl}`));
+    bannerAspectRatio.bannerAspectRatio = `${size.width} / ${size.height}`;
+  }
   const html = fs.readFileSync(`${siteSourceDir}/index.html`, "utf8");
   Handlebars.registerHelper("eachEntries", (context, options) => {
     if (!context) {
@@ -49,7 +59,7 @@ export function build() {
       versions,
     };
   });
-  const result = template({ ...source, packages });
+  const result = template({ ...source, packages, ...bannerAspectRatio });
   fs.writeFileSync(`${siteDestinationDir}/index.html`, result);
 
   const otherFiles = fs

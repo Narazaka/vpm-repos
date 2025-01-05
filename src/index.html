@@ -12,7 +12,7 @@
 <body>
   <main class="container">
     {{#if bannerUrl}}
-    <h1 class="title"><img src="{{bannerUrl}}" alt="{{name}}"></h1>
+    <h1 class="title"><img src="{{bannerUrl}}" alt="{{name}}" style="aspect-ratio: {{bannerAspectRatio}};"></h1>
     {{else}}
     <h1 class="title">{{name}}</h1>
     {{/if}}
