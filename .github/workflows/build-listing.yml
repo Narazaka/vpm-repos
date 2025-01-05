@@ -19,11 +19,6 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 
-env:
-  listPublishDirectory: template/Website
-  pathToTemplate: template
-  pathToCi: template/ci
-
 jobs:
   build-listing:
     name: build-listing
@@ -33,33 +28,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3 # check out this repo
-      - uses: actions/checkout@v3 # check out template repo
-        with:
-          repository: vrchat-community/template-package-listing
-          path: ${{env.pathToTemplate}}
-          clean: false # otherwise the local repo will no longer be checked out
-      - name: Download banner
-        run: curl -o ${{env.pathToTemplate}}/Website/banner.png https://raw.githubusercontent.com/Narazaka/template-package/main/Website/banner.png
-      - uses: actions/checkout@v3 # check out automation repo
-        with:
-          repository: vrchat-community/package-list-action
-          path: ${{env.pathToCi}}
-          clean: false # otherwise the local repo will no longer be checked out
 
-      - run: cp source.json template/source.json
-
-      - name: Restore Cache
-        uses: actions/cache@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v4
         with:
-          path: |
-            ${{env.pathToCi}}/.nuke/temp
-            ~/.nuget/packages
-          key: ${{ runner.os }}-${{ hashFiles('**/global.json', '**/*.csproj') }}
+          node-version: 22.x
+          cache: npm
+
+      - name: npm ci
+        run: npm ci
 
       - name: Build Package Version Listing
-        run: ${{env.pathToCi}}/build.cmd BuildMultiPackageListing --root ${{env.pathToCi}} --list-publish-directory $GITHUB_WORKSPACE/${{env.listPublishDirectory}}
+        run: npm run build-listing
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build Site
+        run: npm run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v3
@@ -67,7 +52,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ${{env.listPublishDirectory}}
+          path: dist
 
       - name: Deploy to GitHub Pages
         id: deployment
