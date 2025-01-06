@@ -5,31 +5,14 @@
   "description": "NarazakaのVPMリポジトリ",
   "type": "module",
   "scripts": {
-    "build-listing": "tsx scripts/build_listing.js",
-    "build": "tsx scripts/build.js",
-    "clean": "tsx scripts/clean.js",
-    "dev": "tsx scripts/dev.js",
-    "format": "npx @biomejs/biome check --write ."
+    "build-listing": "vpm-listing",
+    "build": "vpm-site"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Narazaka/vpm-repos.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "Zlib",
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "@types/node": "^22.10.5",
-    "@types/semver": "^7.5.8",
-    "chokidar": "^4.0.3",
-    "esbuild": "^0.24.2",
-    "handlebars": "^4.7.8",
-    "image-size": "^1.2.0",
-    "octokit": "^4.0.3",
-    "semver": "^7.6.3",
-    "tsx": "^4.19.2",
-    "typescript": "^5.7.2",
-    "vpm-listing-generator": "^1.3.2"
+    "vpm-listing-site-generator": "^1.0.2"
   }
 }
