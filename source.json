@@ -57,7 +57,8 @@
     "Narazaka/URLBookmarks",
     "Narazaka/BedGimmicks",
     "Narazaka/MakeUPMPackage",
-    "Narazaka/CopyAssetsWithDependency"
+    "Narazaka/CopyAssetsWithDependency",
+    "Narazaka/OneShotParameter"
   ],
   "packages": []
 }
