@@ -58,7 +58,8 @@
     "Narazaka/BedGimmicks",
     "Narazaka/MakeUPMPackage",
     "Narazaka/CopyAssetsWithDependency",
-    "Narazaka/OneShotParameter"
+    "Narazaka/OneShotParameter",
+    "Narazaka/ContactSync"
   ],
   "packages": []
 }
