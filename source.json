@@ -59,7 +59,8 @@
     "Narazaka/MakeUPMPackage",
     "Narazaka/CopyAssetsWithDependency",
     "Narazaka/OneShotParameter",
-    "Narazaka/ContactSync"
+    "Narazaka/ContactSync",
+    "Narazaka/ChangeRenderQueue"
   ],
   "packages": []
 }
