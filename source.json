@@ -60,7 +60,8 @@
     "Narazaka/CopyAssetsWithDependency",
     "Narazaka/OneShotParameter",
     "Narazaka/ContactSync",
-    "Narazaka/ChangeRenderQueue"
+    "Narazaka/ChangeRenderQueue",
+    "Narazaka/MASyncParameterSequenceById"
   ],
   "packages": []
 }
