@@ -61,7 +61,8 @@
     "Narazaka/OneShotParameter",
     "Narazaka/ContactSync",
     "Narazaka/ChangeRenderQueue",
-    "Narazaka/MASyncParameterSequenceById"
+    "Narazaka/MASyncParameterSequenceById",
+    "Narazaka/AAPMA"
   ],
   "packages": []
 }
