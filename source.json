@@ -62,7 +62,8 @@
     "Narazaka/ContactSync",
     "Narazaka/ChangeRenderQueue",
     "Narazaka/MASyncParameterSequenceById",
-    "Narazaka/AAPMA"
+    "Narazaka/AAPMA",
+    "Narazaka/CompressedIntParameters"
   ],
   "packages": []
 }
