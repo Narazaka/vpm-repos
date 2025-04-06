@@ -63,7 +63,8 @@
     "Narazaka/ChangeRenderQueue",
     "Narazaka/MASyncParameterSequenceById",
     "Narazaka/AAPMA",
-    "Narazaka/CompressedIntParameters"
+    "Narazaka/CompressedIntParameters",
+    "Narazaka/ExportPackageAdvanced"
   ],
   "packages": []
 }
