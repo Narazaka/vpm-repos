@@ -67,7 +67,8 @@
     "Narazaka/ExportPackageAdvanced",
     "Narazaka/under-2022-constraint-activator",
     "Narazaka/ExcludeChildBones",
-    "Narazaka/MergedAnimationClip"
+    "Narazaka/MergedAnimationClip",
+    "Narazaka/ConnectLine"
   ],
   "packages": []
 }
