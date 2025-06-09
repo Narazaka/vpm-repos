@@ -69,7 +69,8 @@
     "Narazaka/ExcludeChildBones",
     "Narazaka/MergedAnimationClip",
     "Narazaka/ConnectLine",
-    "Narazaka/InfoViewShader"
+    "Narazaka/InfoViewShader",
+    "Narazaka/MeshCombineStudioOnBuild"
   ],
   "packages": []
 }
