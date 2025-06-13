@@ -70,7 +70,8 @@
     "Narazaka/MergedAnimationClip",
     "Narazaka/ConnectLine",
     "Narazaka/InfoViewShader",
-    "Narazaka/MeshCombineStudioOnBuild"
+    "Narazaka/MeshCombineStudioOnBuild",
+    "Narazaka/VRCPlayerTagMarker"
   ],
   "packages": []
 }
