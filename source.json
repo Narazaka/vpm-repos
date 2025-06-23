@@ -71,7 +71,8 @@
     "Narazaka/ConnectLine",
     "Narazaka/InfoViewShader",
     "Narazaka/MeshCombineStudioOnBuild",
-    "Narazaka/VRCPlayerTagMarker"
+    "Narazaka/VRCPlayerTagMarker",
+    "Narazaka/override-values-on-build"
   ],
   "packages": []
 }
