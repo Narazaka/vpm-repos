@@ -74,7 +74,8 @@
     "Narazaka/VRCPlayerTagMarker",
     "Narazaka/override-values-on-build",
     "Narazaka/FadeTeleport",
-    "Narazaka/AreaPartition"
+    "Narazaka/AreaPartition",
+    "Narazaka/EntryRoom"
   ],
   "packages": []
 }
