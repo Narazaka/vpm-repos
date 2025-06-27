@@ -73,7 +73,8 @@
     "Narazaka/MeshCombineStudioOnBuild",
     "Narazaka/VRCPlayerTagMarker",
     "Narazaka/override-values-on-build",
-    "Narazaka/FadeTeleport"
+    "Narazaka/FadeTeleport",
+    "Narazaka/AreaPartition"
   ],
   "packages": []
 }
