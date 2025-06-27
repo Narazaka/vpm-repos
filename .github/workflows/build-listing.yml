@@ -41,7 +41,7 @@ jobs:
       - name: Build Package Version Listing
         run: npm run build-listing
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_PAT || secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
 
       - name: Build Site
         run: npm run build
