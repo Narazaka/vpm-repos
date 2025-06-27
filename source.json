@@ -72,7 +72,8 @@
     "Narazaka/InfoViewShader",
     "Narazaka/MeshCombineStudioOnBuild",
     "Narazaka/VRCPlayerTagMarker",
-    "Narazaka/override-values-on-build"
+    "Narazaka/override-values-on-build",
+    "Narazaka/FadeTeleport"
   ],
   "packages": []
 }
