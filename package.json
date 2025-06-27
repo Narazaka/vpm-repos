@@ -13,6 +13,6 @@
     "url": "git+https://github.com/Narazaka/vpm-repos.git"
   },
   "devDependencies": {
-    "vpm-listing-site-generator": "^1.3.1-beta.1"
+    "vpm-listing-site-generator": "^1.3.1-beta.2"
   }
 }
