@@ -75,7 +75,8 @@
     "Narazaka/override-values-on-build",
     "Narazaka/FadeTeleport",
     "Narazaka/AreaPartition",
-    "Narazaka/EntryRoom"
+    "Narazaka/EntryRoom",
+    "Narazaka/PickupBroom"
   ],
   "packages": []
 }
