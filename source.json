@@ -76,7 +76,8 @@
     "Narazaka/FadeTeleport",
     "Narazaka/AreaPartition",
     "Narazaka/EntryRoom",
-    "Narazaka/PickupBroom"
+    "Narazaka/PickupBroom",
+    "Narazaka/FindComponentInPrefabs"
   ],
   "packages": []
 }
