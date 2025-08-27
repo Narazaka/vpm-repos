@@ -78,7 +78,8 @@
     "Narazaka/EntryRoom",
     "Narazaka/PickupBroom",
     "Narazaka/FindComponentInPrefabs",
-    "Narazaka/QuizSystem"
+    "Narazaka/QuizSystem",
+    "Narazaka/MatchingSystem"
   ],
   "packages": []
 }
