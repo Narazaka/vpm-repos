@@ -79,7 +79,8 @@
     "Narazaka/PickupBroom",
     "Narazaka/FindComponentInPrefabs",
     "Narazaka/QuizSystem",
-    "Narazaka/MatchingSystem"
+    "Narazaka/MatchingSystem",
+    "Narazaka/BodyAdjustMatcher"
   ],
   "packages": []
 }
