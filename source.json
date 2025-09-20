@@ -80,7 +80,8 @@
     "Narazaka/FindComponentInPrefabs",
     "Narazaka/QuizSystem",
     "Narazaka/MatchingSystem",
-    "Narazaka/BodyAdjustMatcher"
+    "Narazaka/BodyAdjustMatcher",
+    "Narazaka/ConvenientModels"
   ],
   "packages": []
 }
