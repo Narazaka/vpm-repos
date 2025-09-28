@@ -81,7 +81,8 @@
     "Narazaka/QuizSystem",
     "Narazaka/MatchingSystem",
     "Narazaka/BodyAdjustMatcher",
-    "Narazaka/ConvenientModels"
+    "Narazaka/ConvenientModels",
+    "Narazaka/PlayerSelectUI"
   ],
   "packages": []
 }
