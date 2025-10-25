@@ -43,6 +43,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
 
+      - name: Fix listing
+        run: npm run fix-listing
+
       - name: Build Site
         run: npm run build
 
