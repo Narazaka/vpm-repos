@@ -83,7 +83,8 @@
     "Narazaka/BodyAdjustMatcher",
     "Narazaka/ConvenientModels",
     "Narazaka/PlayerSelectUI",
-    "Narazaka/PlayerView"
+    "Narazaka/PlayerView",
+    "Narazaka/MakeUdonAssemblyDefinition"
   ],
   "packages": []
 }
