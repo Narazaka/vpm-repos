@@ -84,7 +84,8 @@
     "Narazaka/ConvenientModels",
     "Narazaka/PlayerSelectUI",
     "Narazaka/PlayerView",
-    "Narazaka/MakeUdonAssemblyDefinition"
+    "Narazaka/MakeUdonAssemblyDefinition",
+    "Narazaka/bulk-setup-blendshape-sync"
   ],
   "packages": []
 }
