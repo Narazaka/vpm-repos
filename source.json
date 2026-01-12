@@ -85,7 +85,8 @@
     "Narazaka/PlayerSelectUI",
     "Narazaka/PlayerView",
     "Narazaka/MakeUdonAssemblyDefinition",
-    "Narazaka/bulk-setup-blendshape-sync"
+    "Narazaka/bulk-setup-blendshape-sync",
+    "Narazaka/VRCChimeraHelper"
   ],
   "packages": []
 }
