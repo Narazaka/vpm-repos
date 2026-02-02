@@ -86,7 +86,8 @@
     "Narazaka/PlayerView",
     "Narazaka/MakeUdonAssemblyDefinition",
     "Narazaka/bulk-setup-blendshape-sync",
-    "Narazaka/VRCChimeraHelper"
+    "Narazaka/VRCChimeraHelper",
+    "Narazaka/anim-to-facetune-data"
   ],
   "packages": []
 }
