@@ -21,6 +21,9 @@ on:
         type: boolean
         description: "build vpai zip"
         default: true
+      exclude:
+        type: string
+        description: "newline-separated paths/globs to exclude from the package (supports spaces in paths and glob patterns)"
 
 permissions:
   contents: write
@@ -68,6 +71,19 @@ jobs:
 
       - name: remove ~
         run: rm -rf *~
+
+      # exclude: パッケージから除外するパス/グロブを改行区切りで指定
+      # - 空白を含むパスに対応 (IFS= で行全体を保持)
+      # - グロブパターンに対応 (find -path がワイルドカードを解釈)
+      # - 環境変数経由で渡すことで ${{ }} のスクリプトインジェクションを回避
+      - name: Remove excluded files
+        if: ${{ inputs.exclude != '' }}
+        env:
+          EXCLUDE: ${{ inputs.exclude }}
+        run: |
+          while IFS= read -r pattern; do
+            [ -n "$pattern" ] && find . -path "./$pattern" -exec rm -rf {} +
+          done <<< "$EXCLUDE"
 
       - name: Create Zip
         uses: thedoctor0/zip-release@09336613be18a8208dfa66bd57efafd9e2685657
