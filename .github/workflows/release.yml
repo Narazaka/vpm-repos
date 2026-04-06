@@ -82,7 +82,9 @@ jobs:
           EXCLUDE: ${{ inputs.exclude }}
         run: |
           while IFS= read -r pattern; do
-            [ -n "$pattern" ] && find . -path "./$pattern" -exec rm -rf {} +
+            if [ -n "$pattern" ]; then
+              find . -path "./$pattern" -exec rm -rf {} +
+            fi
           done <<< "$EXCLUDE"
 
       - name: Create Zip
