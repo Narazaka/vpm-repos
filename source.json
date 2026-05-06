@@ -89,7 +89,8 @@
     "Narazaka/VRCChimeraHelper",
     "Narazaka/anim-to-facetune-data",
     "Narazaka/AreaPlayerCount",
-    "Narazaka/AvatarSignatureChecker"
+    "Narazaka/AvatarSignatureChecker",
+    "Narazaka/PlayerVolumeManager"
   ],
   "packages": []
 }
