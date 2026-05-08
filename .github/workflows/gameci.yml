@@ -68,6 +68,7 @@ jobs:
           cp -R project-assets/.github/workflows/ProjectRoot/${{ inputs.unity }}/* .
           rm -rf project-assets
           rm -rf Packages/com.vrchat.core.bootstrap
+          rm -rf Packages/vpm-manifest.json
 
       - name: Checkout repository
         uses: actions/checkout@v4
