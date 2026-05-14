@@ -90,7 +90,8 @@
     "Narazaka/anim-to-facetune-data",
     "Narazaka/AreaPlayerCount",
     "Narazaka/AvatarSignatureChecker",
-    "Narazaka/PlayerVolumeManager"
+    "Narazaka/PlayerVolumeManager",
+    "Narazaka/liltoon-shader-merger"
   ],
   "packages": []
 }
