@@ -106,6 +106,18 @@ jobs:
           path: Packages/${{steps.packageName.outputs.prop}}
           clean: false # otherwise the local repo will no longer be checked out
 
+      - name: Remove excluded files for unitypackage
+        if: ${{ inputs.novcc == true && inputs.exclude != '' }}
+        env:
+          EXCLUDE: ${{ inputs.exclude }}
+          PKG_DIR: Packages/${{steps.packageName.outputs.prop}}
+        run: |
+          while IFS= read -r pattern; do
+            if [ -n "$pattern" ]; then
+              find "$PKG_DIR" -path "$PKG_DIR/$pattern" -exec rm -rf {} +
+            fi
+          done <<< "$EXCLUDE"
+
       - name: Create .meta list
         if: ${{ inputs.novcc == true }}
         run: find "Packages/${{steps.packageName.outputs.prop}}" -name \*.meta >> metaList
