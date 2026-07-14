@@ -91,7 +91,8 @@
     "Narazaka/AreaPlayerCount",
     "Narazaka/AvatarSignatureChecker",
     "Narazaka/PlayerVolumeManager",
-    "Narazaka/liltoon-shader-merger"
+    "Narazaka/liltoon-shader-merger",
+    "Narazaka/net.narazaka.vrchat.costume-dashboard"
   ],
   "packages": []
 }
