@@ -53,12 +53,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout template
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: vrchat-community/template-avatar
 
       - name: Checkout project assets
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: Narazaka/vpm-repos
           path: project-assets
@@ -71,7 +71,7 @@ jobs:
           rm -rf Packages/vpm-manifest.json
 
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           path: TargetPackage
 
@@ -122,7 +122,7 @@ jobs:
       - uses: anatawa12/sh-actions/resolve-vpm-packages@master
 
       # Cache
-      - uses: actions/cache@v3
+      - uses: actions/cache@v6
         with:
           path: Library
           key: Library-unity=${{ inputs.unity }}-vrcsdk=${{ inputs.vrcsdk-type }}-${{ inputs.vrcsdk-version }}-packages=${{ inputs.packages }}
@@ -152,13 +152,13 @@ jobs:
           checkName: ${{ steps.case-name.outputs.name }}
           coverageOptions: ${{ inputs.coverageOptions }}${{ inputs.assemblyFilters != '' && format(';assemblyFilters:{0}', inputs.assemblyFilters) || '' }}
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: Test ${{ steps.case-name.outputs.name }}
           path: ${{ steps.gameci.outputs.artifactsPath }}
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: Coverage ${{ steps.case-name.outputs.name }}
