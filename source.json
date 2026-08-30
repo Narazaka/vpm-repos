@@ -93,7 +93,8 @@
     "Narazaka/PlayerVolumeManager",
     "Narazaka/liltoon-shader-merger",
     "Narazaka/net.narazaka.vrchat.costume-dashboard",
-    "Narazaka/VRCBlobShadow"
+    "Narazaka/VRCBlobShadow",
+    "Narazaka/ManualObjectSyncAdditions"
   ],
   "packages": []
 }
