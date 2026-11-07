@@ -96,7 +96,8 @@
     "Narazaka/VRCBlobShadow",
     "Narazaka/ManualObjectSyncAdditions",
     "Narazaka/TrainVisionRotator",
-    "Narazaka/ReflectionProbeScaleAdjuster"
+    "Narazaka/ReflectionProbeScaleAdjuster",
+    "Narazaka/AddPBCollider"
   ],
   "packages": []
 }
